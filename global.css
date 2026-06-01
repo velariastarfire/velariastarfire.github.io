@@ -3,7 +3,7 @@
    ========================================================================== */
 
 :root {
-    /* Theme Colors (We can change these for different projects) */
+    /* Colors */
     --primary-color: #6200ee;
     --accent-color: #03dac6;
     --background-color: #121212;
@@ -17,7 +17,6 @@
     --main-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Base Setup */
 body {
     background-color: var(--background-color);
     color: var(--text-main);
@@ -29,7 +28,6 @@ body {
     align-items: center;
 }
 
-/* Uniform Containers / Cards */
 .card {
     background-color: var(--card-background);
     border-radius: var(--rounded-corners);
@@ -40,7 +38,6 @@ body {
     width: 100%;
 }
 
-/* Uniform Buttons */
 .btn {
     background-color: var(--primary-color);
     color: white;
