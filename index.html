@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive Roots</title>
+    <style>
+        :root {
+            --space-bg: #060214; /* Deepest Indigo-Black */
+            --nebula-glow: linear-gradient(180deg, #1a0033 0%, #060214 100%); /* Deep Indigo to Space */
+            --starlight: #e2d9f3;
+            --electric-blue: #00e5ff; /* Your favorite Electric Blue */
+            --cosmic-gold: #ffd700; /* Rich Gold */
+            --card-bg: rgba(26, 0, 51, 0.4);
+        }
+
+        body {
+            background-color: var(--space-bg);
+            background-image: var(--nebula-glow);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 20px 40px 20px;
+        }
+
+            .header h1 {
+                font-size: 2.8rem;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                margin: 0;
+                background: linear-gradient(135deg, #ffffff 0%, var(--electric-blue) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .header .subtitle {
+                font-size: 0.95rem;
+                color: var(--cosmic-gold);
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-top: 12px;
+                font-weight: 600;
+            }
+
+        .bio {
+            max-width: 600px;
+            text-align: center;
+            color: var(--starlight);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        /* Flagship Live Project Styling */
+        .project-card.flagship {
+            background: rgba(26, 0, 51, 0.3);
+            border: 1px solid var(--electric-blue);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .flagship-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .badge {
+            border: 1px solid var(--cosmic-gold);
+            color: var(--cosmic-gold);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+        /* Vaulted Projects Styling */
+        .vault-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card.vault {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+            .project-card.vault:hover {
+                transform: translateY(-3px);
+                border-color: var(--cosmic-gold);
+                box-shadow: 0 5px 15px rgba(255, 215, 0, 0.05);
+            }
+
+        h2, h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+        }
+
+        p {
+            color: #b0a8c3;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--electric-blue) 0%, #0099ff 100%);
+            color: #060214;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+            .btn:hover {
+                opacity: 0.9;
+            }
+
+        .footer {
+            margin-top: auto;
+            padding: 80px 20px 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.25);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Recursive Roots</h1>
+        <div class="subtitle">Computational Logic & Astro-Mathematics</div>
+    </header>
+
+    <div class="bio">
+        Bridging the impossible through precision engineering. Recursive Roots is an independent development studio focusing on high-fidelity computation engines, non-linear data structures, and celestial tracking frameworks.
+    </div>
+
+    <main class="grid">
+        <!-- FLAGSHIP: IMMENSUM -->
+        <section class="project-card flagship">
+            <div class="flagship-header">
+                <h2 style="color: #ffffff;">Immensum</h2>
+                <span class="badge">Flagship Engine • Live</span>
+            </div>
+            <p>The infinite, made calculable. A high-precision, arbitrary-length numerical engine built to shatter standard spreadsheet processing limits and preserve total mathematical fidelity.</p>
+            <a href="/Immensum/" class="btn">Explore Engine</a>
+        </section>
+
+        <!-- THE VAULT -->
+        <h2 style="margin-top: 50px; font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; color: var(--electric-blue);">The Nebula Vault</h2>
+        <div class="vault-grid">
+            <article class="project-card vault">
+                <h3 style="color: var(--starlight);">Chronos</h3>
+                <p>An advanced processing engine built for extracting and comparing high-fidelity orbital date ranges from ephemeris data to map celestial transitions over time.</p>
+            </article>
+
+            <article class="project-card vault">
+                <h3 style="color: var(--starlight);">Atlas</h3>
+                <p>A high-fidelity visualization toolkit designed for mapping complex, non-linear mathematical frameworks into intuitive graphical interfaces.</p>
+            </article>
+
+            <article class="project-card vault">
+                <h3 style="color: var(--starlight);">Praxis</h3>
+                <p>A specialized structural framework utilizing custom IPC configurations to bypass standard rendering limitations for complex system data integration.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        Recursive Roots • Velaria Starfire • Sol System
+    </footer>
+
+</body>
+</html> 
