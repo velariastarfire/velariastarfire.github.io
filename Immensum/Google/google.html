@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immensum Engine Core</title>
+    <title>Immensum — Google Workspace Integration</title>
     <style>
         :root {
             --space-bg: #060214;
@@ -49,148 +49,114 @@
                 }
 
         .container {
-            max-width: 1100px;
+            max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 0 20px 80px 20px;
             box-sizing: border-box;
         }
 
-        .engine-header {
+        .extension-header {
             border-bottom: 1px solid rgba(0, 229, 255, 0.2);
             padding-bottom: 30px;
-            margin-bottom: 50px;
-        }
-
-        .engine-title-area {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 20px;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 3rem;
-            letter-spacing: 4px;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
             margin: 0;
             text-transform: uppercase;
-            background: linear-gradient(135deg, #ffffff 0%, var(--electric-blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
         }
 
-        .status-badge {
-            border: 1px solid var(--electric-blue);
-            color: var(--electric-blue);
-            padding: 6px 16px;
-            border-radius: 4px;
-            font-size: 0.85rem;
+        .platform-tag {
+            color: var(--cosmic-gold);
+            font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: bold;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+            margin-top: 10px;
+            font-weight: 600;
         }
 
-        .tagline {
-            color: var(--cosmic-gold);
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            margin-top: 15px;
-            font-weight: 500;
+        .terminal-box {
+            background: var(--terminal-dark);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.05);
+            margin-bottom: 40px;
         }
 
-        /* Module Grid Setup */
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .module-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 35px;
+        .terminal-header {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 280px;
-            transition: all 0.3s ease;
+            gap: 8px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 12px;
         }
 
-            .module-card.active {
-                border-color: rgba(255, 215, 0, 0.3);
-                box-shadow: 0 5px 20px rgba(255, 215, 0, 0.03);
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+        }
+
+            .dot.blue {
+                background: var(--electric-blue);
             }
-
-            .module-card.placeholder {
-                border-style: dashed;
-                border-color: rgba(255, 255, 255, 0.1);
-                background: rgba(26, 0, 51, 0.15);
-            }
-
-        .module-meta {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--starlight);
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .module-card.active .module-meta {
-            color: var(--cosmic-gold);
-        }
 
         h2 {
-            margin: 0 0 15px 0;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
+            color: var(--electric-blue);
+            margin-top: 0;
             letter-spacing: 1px;
-        }
-
-        .module-card.placeholder h2 {
-            color: rgba(255, 255, 255, 0.4);
         }
 
         p {
             color: #b0a8c3;
-            line-height: 1.6;
-            margin: 0 0 30px 0;
-            font-size: 0.95rem;
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
-        .module-card.placeholder p {
-            color: rgba(176, 168, 195, 0.4);
+        .step-list {
+            margin: 25px 0;
+            padding-left: 20px;
         }
 
-        .btn {
-            display: inline-block;
-            text-align: center;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-decoration: none;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--cosmic-gold) 0%, #cc9900 100%);
-            color: #060214;
-        }
-
-            .btn-primary:hover {
-                opacity: 0.9;
+            .step-list li {
+                color: #ffffff;
+                margin-bottom: 15px;
+                line-height: 1.6;
             }
 
-        .btn-disabled {
-            border: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.2);
-            cursor: not-allowed;
+            .step-list strong {
+                color: var(--cosmic-gold);
+            }
+
+        .btn-install {
+            display: block;
+            text-align: center;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--electric-blue) 0%, #0099ff 100%);
+            color: #060214;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+            transition: all 0.2s ease;
+            margin-top: 30px;
         }
+
+            .btn-install:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+            }
 
         .footer {
             margin-top: auto;
@@ -206,27 +172,40 @@
 <body>
 
     <nav class="nav-back">
-        <a href="../">← Return to Motherstation</a>
+        <!-- Steps back up out of /google/ and out of /Immensum/ to the console root -->
+        <a href="../immensum.html">← Back to Core Console</a>
     </nav>
 
     <main class="container">
-        <header class="engine-header">
-            <div class="engine-title-area">
-                <div>
-                    <h1>Immensum</h1>
-                    <div class="tagline">Arbitrary-Length Precision Mathematics Engine</div>
-                </div>
-                <div class="status-badge">Core Operational</div>
-            </div>
+        <header class="extension-header">
+            <h1>Immensum Core</h1>
+            <div class="platform-tag">Google Workspace Deployment Node</div>
         </header>
 
-        <section class="module-grid">
-            <div class="status-badge">test</div>
+        <section class="terminal-box">
+            <div class="terminal-header">
+                <div class="dot blue"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <h2>Initialization Protocol</h2>
+            <p>Deploy arbitrary-length numerical processing limits directly into your active spreadsheets. Immensum bypasses default JavaScript 64-bit float thresholds by piping calculation matrices through our dedicated server runtime.</p>
+
+            <ol class="step-list">
+                <li>Click the <strong>Access Marketplace</strong> interface anchor below.</li>
+                <li>Authenticate via your authorized Google credentials to initialize mounting parameters.</li>
+                <li>Accept structural workspace bindings to allow cell data matrix reads.</li>
+                <li>Open any spreadsheet container and locate <strong>Extensions → Immensum Engine</strong> to activate the calculation sidebar interface.</li>
+            </ol>
+
+            <!-- Replace '#' with your actual Google Add-on installation link when ready -->
+            <a href="#" class="btn-install">Access Workspace Marketplace</a>
         </section>
     </main>
 
     <footer class="footer">
-        Recursive Roots • Immensum Engine Core v1.0
+        Recursive Roots • Immensum System Framework
     </footer>
 
 </body>
