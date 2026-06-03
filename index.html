@@ -3,26 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recursive Roots</title>
-    <link rel="stylesheet" href="global.css">
+    <title>Immensum | The Infinite, Made Calculable</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-    <header style="text-align: center; margin-bottom: 40px;">
-        <h1>Recursive Roots</h1>
-        <p style="color: var(--text-muted);">The digital ecosystem for all coding projects.</p>
+    <!-- 🌌 NAV BAR -->
+    <header class="forge-header">
+        <div class="logo-container">
+            <span class="brand-name">IMMENSUM</span>
+        </div>
+        <nav class="nav-links">
+            <a href="sheets-module.html">Sheets Module</a>
+            <a href="#showcase">Live Proof</a>
+            <a href="https://github.com/velariastarfire/Immensum" target="_blank">GitHub</a>
+        </nav>
     </header>
 
-    <main>
-        <div class="card">
-            <h2>Immensum</h2>
-            <p>Custom heavy-duty tools bypassing standard floating-point limitations using robust integer math engines.</p>
+    <!-- 🛠️ MAIN PLATFORM WORKSPACE -->
+    <main class="module-container">
+        
+        <!-- 🚀 HERO SECTION: The First Impression -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>The Infinite, Made Calculable.</h1>
+                <p>A high-precision numerical engine designed to handle massive integers far beyond the native processing limits of traditional spreadsheets.</p>
+                <div class="cta-buttons">
+                    <a href="sheets-module.html" class="btn-primary">Google Sheets™</a>
+                </div>
+            </div>
+        </section>
 
-            <button class="btn" onclick="window.location.href='./immensum/index.html'">Enter Immensum</button>
-        </div>
+        <!-- 🎥 THE LIVE INTERFACE DEMO VIDEO (Tucked into our new CSS layout class) -->
+        <section id="showcase" class="showcase-section">
+            <div class="video-glow-frame">
+                <video controls width="100%" poster="Assets/ScreenShotSafe.jpg">
+                    <source src="Assets/ImmensumPreviewSafe.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- DESCRIPTION BLOCK -->
+        <section class="showcase-section">
+            <div class="screenshot-card">
+                <div class="screenshot-caption">
+                    <h3 style="color: #fff; margin-bottom: 0.5rem;">⚡ Breaking the 64-Bit Barrier</h3>
+                    <p>Standard spreadsheets force giant integers and tiny micro-decimals to round down, warp, or throw ugly <code>#NUM!</code> overflow errors. Immensum overrides that limitation entirely, returning <strong>absolute mathematical accuracy</strong> on numbers of any length, handled as perfect data strings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📸 SCREENSHOT & VISUAL GALLERY -->
+        <section class="showcase-section">
+            <div class="screenshot-card">
+                <div class="screenshot-caption">
+                    <h3 style="color: #fff; margin-bottom: 0.5rem;">🧠 The Native Sidebar Console</h3>
+                    <p>Drop your activation key into the sidebar, control your computation settings, and run live data streams right next to your grid. It is built to blend seamlessly into your daily workflow without messing up your cell layouts or breaking your formulas.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    
     <!-- 🛠️ FOOTER -->
     <footer class="forge-footer">
         <div class="footer-content">
@@ -36,6 +79,6 @@
             </nav>
         </div>
     </footer>
-    
+
 </body>
 </html>
